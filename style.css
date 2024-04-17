@@ -2,6 +2,7 @@
 body {
     font-family: helvetica, sans-serif;
     width: 350px;
+    margin: 1rem auto;
   }
 
   label {
@@ -18,8 +19,8 @@ body {
   }
 
   p {
-    background: #ffc125;
-    color: #5e2612;
+    background: #e6e6e6;
+    color: #1a2844;
     padding: 10px;
     visibility: hidden;
   }
