@@ -21,6 +21,12 @@ const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewal
 randomize.addEventListener('click', result);
 
 function result() {
+    let newStory = storyText; 
+
+    // Replace placeholders with random values
+    newStory = newStory.replace(':insertx:', xItem);
+    newStory = newStory.replace(':inserty:', yItem);
+    newStory = newStory.replace(':insertz:', zItem);
 
   if(customName.value !== '') {
     const name = customName.value;
@@ -28,16 +34,20 @@ function result() {
   }
 
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
-
+    const weight = Math.round(
+        function poundsToStone (pounds) {
+            return pounds / 14; 
+        });
+    const temperature =  Math.round(
+        function fahrenheitToCelcius (fahrenheit) {
+            return (5/9) * (fahrenheit - 32); 
+        });
   }
 
-  story.textContent = ;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
 
-const newStory = storyText; 
-const xItem = randomValueFromArray(); 
-const yItem = randomValueFromArray(); 
-const zItem = randomValueFromArray(); 
+const xItem = randomValueFromArray(insertX); 
+const yItem = randomValueFromArray(insertY); 
+const zItem = randomValueFromArray(insertZ); 
